@@ -17,6 +17,13 @@ st.set_page_config(
     layout="centered"
 )
 
+st.markdown(
+    """
+    <meta name="google-site-verification" content="cPmg8dYJmadfZd-RCHneygSYxIJ2zeg4-IxmLsF-sYI" />
+    """,
+    unsafe_allow_html=True
+)
+
 df = pd.read_csv("spotify_data.csv")
 df = df.drop_duplicates(subset=['track_name'])
 df['tempo_norm'] = (df['tempo'] - df['tempo'].min()) / (df['tempo'].max() - df['tempo'].min())
